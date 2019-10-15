@@ -88,17 +88,21 @@ for (let multiplier = 1; multiplier <= 10; multiplier++) {
     console.log(result);
 }
 
-//
-// Example:
-// The number 15 should print:
-//
-// 1 * 15 = 15
-// 2 * 15 = 30
-// 3 * 15 = 45
-// 4 * 15 = 60
-// 5 * 15 = 75
-// 6 * 15 = 90
-// 7 * 15 = 105
-// 8 * 15 = 120
-// 9 * 15 = 135
-// 10 * 15 = 150
+
+//5 - fizz-buzz
+'use strict';
+// Write a program that prints the numbers from 1 to 100.
+// But for multiples of three print “Fizz” instead of the number
+// and for the multiples of five print “Buzz”.
+// For numbers which are multiples of both three and five print “FizzBuzz”.
+for(let num = 0; num <= 100; num++) {
+    if(num % 3 === 0 && num % 5 === 0) {
+        console.log(`FizzBuzz`);
+    }else if(num % 3 === 0) {
+        console.log(`Fizz`);
+    }else if(num % 5 === 0) {
+        console.log(`Buzz`);         
+    }else {
+        console.log(num);
+    }
+}
