@@ -65,3 +65,18 @@ function factorio(parm1) {
     }
 }
 console.log(factorio(3));
+
+//17 - printer
+'use strict';
+// - Create a function called `printer`
+//   which logs to the console the input parameters
+//   (can have multiple number of arguments)
+// function printer(...parm1) {
+    
+// }
+// printer(1,2,3);
+// const readline = require('readline').createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+//   })
+  
