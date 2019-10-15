@@ -127,6 +127,102 @@ while (starNum <= lineCount) {
 //
 // The triangle should have as many lines as lineCount is
 
+//7 - draw-pyramid
+'use strict';
+
+const lineCount = 4;
+for (let row = 1; row <= lineCount; row++) {
+    let rowResult = ``;
+    for (let col1 = lineCount-row;  col1>=0; col1--) {
+        rowResult += ` `;
+    }
+    for (let col2 = 1; col2 <= (row * 2 -1); col2++) {
+        rowResult += `*`;
+    }
+    console.log(rowResult);
+}
+
+// Write a program that draws a
+// pyramid like this:
+//
+//
+//    *
+//   ***
+//  *****
+// *******
+//
+// The pyramid should have as many lines as lineCount is
+
+//8 - draw-diamond
+'use strict';
+
+const lineCount = 7;
+for (let row = 1; row <= lineCount; row++) {
+    let rowResult = ``;
+    if (row<=lineCount/2+1){
+        for (let col1 = ((lineCount+1)/2 - row);  col1 >= 0; col1--) {
+            rowResult += ` `;
+        }
+        for (let col2 = 1; col2 <= (row * 2 -1); col2++) {
+            rowResult += `*`;
+        }
+    }else{
+        for (let col1 = (row - lineCount / 2); col1 >= 0; col1--) {
+            rowResult += ` `;
+        }
+        for (let col2 = 1; col2 <= ((lineCount-row)*2+1); col2++) {
+            rowResult += `*`;
+        }
+    }
+    console.log(rowResult);
+}
+// Write a program that draws a
+// diamond like this:
+//
+//
+//    *
+//   ***
+//  *****
+// *******
+//  *****
+//   ***
+//    *
+//
+// The diamond should have as many lines as lineCount is
+
+
+//9 - draw-square
+'use strict';
+
+const lineCount = 6;
+for (let row = 1; row <= lineCount; row ++) {
+    let output9 = ``;
+    for (let col = 1; col <= lineCount; col++) {
+        if (row === 1 || row === lineCount) {
+            output9 += `%`;
+        }else if (col === lineCount || col === 1){
+            output9 += `%`;
+        }else {
+            output9 += ` `;
+        }
+    }
+    console.log(output9);
+}
+
+// Write a program that draws a
+// square like this:
+//
+//
+// %%%%%%
+// %    %
+// %    %
+// %    %
+// %    %
+// %%%%%%
+//
+// The square should have as many lines as lineCount is
+
+
 //10 - draw-diagonal
 'use strict';
 

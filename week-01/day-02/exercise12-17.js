@@ -71,9 +71,10 @@ console.log(factorio(3));
 // - Create a function called `printer`
 //   which logs to the console the input parameters
 //   (can have multiple number of arguments)
-// function printer(...parm1) {
-    
-// }
+function printer(...parm1) {
+    console.log(parm1);    
+}
+printer();
 // printer(1,2,3);
 // const readline = require('readline').createInterface({
 //     input: process.stdin,
