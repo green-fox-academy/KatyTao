@@ -95,14 +95,34 @@ for (let multiplier = 1; multiplier <= 10; multiplier++) {
 // But for multiples of three print “Fizz” instead of the number
 // and for the multiples of five print “Buzz”.
 // For numbers which are multiples of both three and five print “FizzBuzz”.
-for(let num = 0; num <= 100; num++) {
-    if(num % 3 === 0 && num % 5 === 0) {
+for (let num = 0; num <= 100; num++) {
+    if (num % 3 === 0 && num % 5 === 0) {
         console.log(`FizzBuzz`);
-    }else if(num % 3 === 0) {
+    }else if (num % 3 === 0) {
         console.log(`Fizz`);
-    }else if(num % 5 === 0) {
+    }else if (num % 5 === 0) {
         console.log(`Buzz`);         
     }else {
         console.log(num);
     }
 }
+
+//6 - draw-triangle
+'use strict';
+const lineCount = 4;
+starNum = 1;
+starLine = ``;
+while (starNum <= lineCount) {
+    starLine += `*`;
+    console.log(starLine);
+    starNum ++;
+}
+// Write a program that draws a
+// triangle like this:
+//
+// *
+// **
+// ***
+// ****
+//
+// The triangle should have as many lines as lineCount is
