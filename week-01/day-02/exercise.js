@@ -71,8 +71,34 @@ while (count < 100) {
 //3 - print-even
 'use strict';
 // Create a program that prints all the even numbers between 0 and 500
-for (let a = 0; a <= 500;  a++) {
+for (let a = 0; a <= 500; a++) {
     if (a % 2 === 0) {
         console.log(a);
     }
 }
+
+//4 - multiplication-table
+'use strict';
+const number = 15;
+// Create a program that
+// prints the multiplication table with number
+let result = ``;
+for (let multiplier = 1; multiplier <= 10; multiplier++) {
+    result = multiplier.toString() + ` * ` + number.toString() +  ` = ` + (multiplier*number).toString();
+    console.log(result);
+}
+
+//
+// Example:
+// The number 15 should print:
+//
+// 1 * 15 = 15
+// 2 * 15 = 30
+// 3 * 15 = 45
+// 4 * 15 = 60
+// 5 * 15 = 75
+// 6 * 15 = 90
+// 7 * 15 = 105
+// 8 * 15 = 120
+// 9 * 15 = 135
+// 10 * 15 = 150
