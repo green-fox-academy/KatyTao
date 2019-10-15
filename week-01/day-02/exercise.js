@@ -126,3 +126,34 @@ while (starNum <= lineCount) {
 // ****
 //
 // The triangle should have as many lines as lineCount is
+
+//10 - draw-diagonal
+'use strict';
+
+const lineCount = 6;
+for (let row = 1; row <= lineCount; row ++) {
+    let output10 = ``;
+    for (let col = 1; col <= lineCount; col++) {
+        if (row === 1 || row === lineCount) {
+            output10 += `%`;
+        }else if (col === row || col === 1 ||  col === lineCount){
+            output10 += `%`;
+        }else {
+            output10 += ` `;
+        }
+    }
+    console.log(output10);
+}
+
+// Write a program that draws a
+// square like this:
+//
+//
+// %%%%%%
+// %%   %
+// % %  %
+// %  % %
+// %   %%
+// %%%%%%
+//
+// The square should have as many lines as lineCount is
