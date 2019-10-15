@@ -57,3 +57,15 @@ if (d % 4 === 0 && time <= 200) {
     out3 = `Run Forest Run!`;
 }
 console.log(out3);
+
+//2 - i-like-trains
+'use strict';
+// Create a program that writes this line 100 times:
+// 'I like trains!'
+let count = 0;
+while (count < 100) {
+    console.log (`I like trains!`);
+    count ++;
+}
+
+//
