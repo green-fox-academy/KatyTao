@@ -157,3 +157,29 @@ for (let row = 1; row <= lineCount; row ++) {
 // %%%%%%
 //
 // The square should have as many lines as lineCount is
+
+//11 - draw-chess-table
+// Create a program that draws a chess table like this
+//
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % % 
+//  % % % %
+//
+const lineCount = 8;
+let output11 = ``;
+for (let row = 1; row <= lineCount; row++) {
+    for (let col = 1; col <= lineCount/2; col++) {
+        if (row % 2 === 1) {
+            output11 += `% `;
+        }else {
+            output11 += ` %`;
+        }
+    }
+    console.log(output11);
+    output11 =  ``;
+}
