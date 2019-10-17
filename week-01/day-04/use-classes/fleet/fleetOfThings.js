@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const Thing = require('./thing');
-const Fleet = require('./fleet');
+const Thing = require("./thing");
+const Fleet = require("./fleet");
 const fleet = new Fleet();
 // -  You have the `Thing` class
 // -  You have the `Fleet` class
@@ -18,30 +18,28 @@ const fleet = new Fleet();
 // Hint: You have to create a `print()` method as well
 
 class FleetOfThings {
-    constructor(thingPair){
-        this.thingPair = thingPair;
-        this.list = [];
-        this.outPut = ``;
-    }
-    main() {
-        const newFleet =new Fleet();
-        newFleet.add(this.thingPair);
-        this.list = newFleet.getThings();
-        for (let i = 0; i < this.list.length; i++) {
-            if (this.list[i].completed) {
-                this.outPut += `${i+1}.[x] ${this.list[i].name}\n`;
-            } else{
-                this.outPut += `${i+1}.[ ] ${this.list[i].name}\n`;
-            }
-        }
-        this.print();
-    }
-    print() {
-        console.log(this.outPut);
-    }
+  constructor() {
+    this.main();
+  }
+  main() {
+    this.fleet = new Fleet();
+    this.fleet.add(new Thing("Get milk"));
+    this.fleet.add(new Thing("Remove the obstacles"));
+    this.fleet.add(new Thing("Stand up"));
+    this.fleet.add(new Thing("Eat lunch"));
+    this.fleet.getThings()[2].complete();
+    this.fleet.getThings()[3].complete();
+  }
+  print() {
+    const things = this.fleet.getThings().map((things, index) => {
+      return `${index + 1}. [${
+        things.getCompleted() ? `x` : ` `
+      }] ${things.getName()}\n`;
+    });
+    console.log(things.join());
+  }
 }
 
-const thingOne = new Thing(`Get milk`);
-console.log(typeof thingOne);
-const result = new FleetOfThings(thingOne);
-result.main();
+const fleetOfthings = new FleetOfThings();
+fleetOfthings.main();
+fleetOfthings.print();
