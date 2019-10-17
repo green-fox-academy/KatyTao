@@ -43,29 +43,31 @@ class DiceSet {
 
 const diceSet = new DiceSet();
 diceSet.roll();
-do{
-    diceSet.reroll();
-    
-}while(diceSet.getCurrent().forEach(item => {
-    item!==6;
-}));
+for (let i = 0; i < diceSet.numOfDices; i++) {
+  do{
+    diceSet.reroll(i);
+  }while(diceSet.getCurrent(i)!==6);
+}
 
-
-console.log(diceSet.roll());
 console.log(diceSet.getCurrent());
 
-console.log('------------------');
 
-diceSet.reroll();
-console.log(diceSet.getCurrent());
 
-console.log('------------------');
+// console.log(diceSet.roll());
+// console.log(diceSet.getCurrent());
 
-console.log(diceSet.getCurrent(5));
-diceSet.reroll();
-console.log(diceSet.getCurrent());
+// console.log('------------------');
 
-console.log('------------------');
+// diceSet.reroll();
+// console.log(diceSet.getCurrent());
 
-diceSet.reroll(4);
-console.log(diceSet.getCurrent());
+// console.log('------------------');
+
+// console.log(diceSet.getCurrent(5));
+// diceSet.reroll();
+// console.log(diceSet.getCurrent());
+
+// console.log('------------------');
+
+// diceSet.reroll(4);
+// console.log(diceSet.getCurrent());
