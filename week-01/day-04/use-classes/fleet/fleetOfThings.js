@@ -31,12 +31,13 @@ class FleetOfThings {
     this.fleet.getThings()[3].complete();
   }
   print() {
-    const things = this.fleet.getThings().map((things, index) => {
-      return `${index + 1}. [${
-        things.getCompleted() ? `x` : ` `
-      }] ${things.getName()}\n`;
+    this.fleet.getThings().forEach(function(things, index) {
+      console.log(
+        `${index + 1}. [${
+          things.getCompleted() ? `x` : ` `
+        }] ${things.getName()}`
+      );
     });
-    console.log(things.join());
   }
 }
 
