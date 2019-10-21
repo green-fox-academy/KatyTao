@@ -1,0 +1,3 @@
+interface Printable {
+    printAllFields():void;
+}
