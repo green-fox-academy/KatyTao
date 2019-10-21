@@ -1,3 +1,6 @@
-interface Printable {
-    printAllFields():void;
+`use strict`
+
+export default interface Printable {
+  printAllFields(): void;
 }
+
