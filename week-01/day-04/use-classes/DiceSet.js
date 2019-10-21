@@ -1,7 +1,6 @@
-'use strict';
+"use strict";
 
 class DiceSet {
-
   constructor() {
     this.numOfDices = 6;
   }
@@ -44,14 +43,12 @@ class DiceSet {
 const diceSet = new DiceSet();
 diceSet.roll();
 for (let i = 0; i < diceSet.numOfDices; i++) {
-  do{
+  do {
     diceSet.reroll(i);
-  }while(diceSet.getCurrent(i)!==6);
+  } while (diceSet.getCurrent(i) !== 6);
 }
 
 console.log(diceSet.getCurrent());
-
-
 
 // console.log(diceSet.roll());
 // console.log(diceSet.getCurrent());

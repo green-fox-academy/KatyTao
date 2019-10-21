@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const Domino = require('./domino');
+const Domino = require("./domino");
 
 function initializeDominoes() {
   const dominoes = [];
@@ -18,14 +18,14 @@ console.log(dominoes.toString());
 
 let tempObj = {};
 let tempNum = 0;
-for(let i = 0; i<dominoes.length; i++) {
-    tempNum = dominoes[i].values[1];
-    for(let j = i; j<dominoes.length; j++) {
-        if(dominoes[j].values[0] === tempNum) {
-            tempObj = dominoes[j];
-            dominoes[j] = dominoes[i+1];
-            dominoes[i+1] = tempObj;
-        }
+for (let i = 0; i < dominoes.length; i++) {
+  tempNum = dominoes[i].values[1];
+  for (let j = i; j < dominoes.length; j++) {
+    if (dominoes[j].values[0] === tempNum) {
+      tempObj = dominoes[j];
+      dominoes[j] = dominoes[i + 1];
+      dominoes[i + 1] = tempObj;
     }
+  }
 }
 console.log(dominoes.toString());

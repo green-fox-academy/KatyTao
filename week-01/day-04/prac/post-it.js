@@ -1,10 +1,10 @@
-`use strict`
+`use strict`;
 class PostIt {
-    constructor(backgroundColor, text, textColor) {
-        this.backgroundColor = backgroundColor;
-        this.text = text;
-        this.textColor = textColor;
-    }
+  constructor(backgroundColor, text, textColor) {
+    this.backgroundColor = backgroundColor;
+    this.text = text;
+    this.textColor = textColor;
+  }
 }
 
 const textOne = new PostIt();
@@ -25,8 +25,3 @@ textThree.textColor = `yellow`;
 console.log(textOne);
 console.log(textTwo);
 console.log(textThree);
-
-
-
-
-

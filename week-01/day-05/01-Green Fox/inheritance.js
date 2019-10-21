@@ -1,115 +1,139 @@
 class Person {
-    constructor(name = `Jane Doe`, age = 30, gender = `female`) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
+  constructor(name = `Jane Doe`, age = 30, gender = `female`) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
 
-    introduce() {
-        console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender}`);
-    }
+  introduce() {
+    console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender}`);
+  }
 
-    getGoal() {
-        console.log(`My goal is: Live for the moment!`);
-    }
+  getGoal() {
+    console.log(`My goal is: Live for the moment!`);
+  }
 }
 
-class Student extends Person{
-    constructor(name = `Jane Doe`, age = 30, gender = `female`, previousOrganization = `The School of Life`, skippedDays = 0) {
-        super(name, age, gender);
-        this.previousOrganization = previousOrganization;
-        this.skippedDays = skippedDays;
-    }
+class Student extends Person {
+  constructor(
+    name = `Jane Doe`,
+    age = 30,
+    gender = `female`,
+    previousOrganization = `The School of Life`,
+    skippedDays = 0
+  ) {
+    super(name, age, gender);
+    this.previousOrganization = previousOrganization;
+    this.skippedDays = skippedDays;
+  }
 
-    introduce() {
-        console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} from ${this.previousOrganization} who skipped ${this.skippedDays} days from the course already.`);
-    }
+  introduce() {
+    console.log(
+      `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} from ${this.previousOrganization} who skipped ${this.skippedDays} days from the course already.`
+    );
+  }
 
-    skipDays(numberOfDays) {
-        this.skippedDays += numberOfDays;
-    }
+  skipDays(numberOfDays) {
+    this.skippedDays += numberOfDays;
+  }
 
-    getGoal() {
-        console.log(`My goal is: Be a junior software developer`);
-    }
+  getGoal() {
+    console.log(`My goal is: Be a junior software developer`);
+  }
 }
 
-class Mentor extends Person{
-    constructor(name = `Jane Doe`, age = 30, gender = `female`, level = `intermediate`) {
-        super(name, age, gender);
-        this.level = level;
-    }
+class Mentor extends Person {
+  constructor(
+    name = `Jane Doe`,
+    age = 30,
+    gender = `female`,
+    level = `intermediate`
+  ) {
+    super(name, age, gender);
+    this.level = level;
+  }
 
-    getGoal() {
-        console.log('My goal is: Educate brilliant junior software developers.');
-    }
+  getGoal() {
+    console.log("My goal is: Educate brilliant junior software developers.");
+  }
 
-    introduce() {
-        console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} mentor.`);
-    }
+  introduce() {
+    console.log(
+      `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} mentor.`
+    );
+  }
 }
 
-class Sponsor extends Person{
-    constructor (name = `Jane Doe`, age = 30, gender = `female`, company = `Google`, hiredStudents = 0) {
-        super(name, age, gender);
-        this.company = company;
-        this.hiredStudents = hiredStudents;
-    }
-    introduce() {
-        console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`);
-    }
+class Sponsor extends Person {
+  constructor(
+    name = `Jane Doe`,
+    age = 30,
+    gender = `female`,
+    company = `Google`,
+    hiredStudents = 0
+  ) {
+    super(name, age, gender);
+    this.company = company;
+    this.hiredStudents = hiredStudents;
+  }
+  introduce() {
+    console.log(
+      `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`
+    );
+  }
 
-    hire() {
-        this.hiredStudents += 1;
-    }
+  hire() {
+    this.hiredStudents += 1;
+  }
 
-    getGoal() {
-        console.log('My goal is: Hire brilliant junior software developers.');
-    }
-    
+  getGoal() {
+    console.log("My goal is: Hire brilliant junior software developers.");
+  }
 }
 
 class Cohort {
-    constructor (name) {
-        this.cohortName = name;
-        this.students = [];
-        this.mentors = [];
-    }
-    
-    addStudent(Student) {
-        this.students.push(Student);
-    }
+  constructor(name) {
+    this.cohortName = name;
+    this.students = [];
+    this.mentors = [];
+  }
 
-    addMentor(Mentor) {
-        this.mentors.push(Mentor);        
-    }
+  addStudent(Student) {
+    this.students.push(Student);
+  }
 
-    info() {
-        console.log(`The ${this.name} cohort has ${this.students.length} and ${this.mentors.length} mentors`);
-    }
+  addMentor(Mentor) {
+    this.mentors.push(Mentor);
+  }
+
+  info() {
+    console.log(
+      `The ${this.name} cohort has ${this.students.length} and ${this.mentors.length} mentors`
+    );
+  }
 }
 
 const people = [];
 
-const mark = new Person('Mark', 46, 'male');
+const mark = new Person("Mark", 46, "male");
 people.push(mark);
 
 const jane = new Person();
 people.push(jane);
 
-const john = new Student('John Doe', 20, 'male', 'BME');
+const john = new Student("John Doe", 20, "male", "BME");
 people.push(john);
 
 const student = new Student();
 people.push(student);
 
-const gandhi = new Mentor('Gandhi', 148, 'male', 'senior');
+const gandhi = new Mentor("Gandhi", 148, "male", "senior");
 people.push(gandhi);
 
 const mentor = new Mentor();
 people.push(mentor);
 
-const elon = new Sponsor('Elon Musk', 46, 'male', 'SpaceX');
+const elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
 people.push(elon);
 
 const sponsor = new Sponsor();
@@ -125,12 +149,12 @@ for (let i = 0; i < 4; i++) {
   sponsor.hire();
 }
 
-people.forEach((person) => {
+people.forEach(person => {
   person.introduce();
   person.getGoal();
-})
+});
 
-const awesome = new Cohort('AWESOME');
+const awesome = new Cohort("AWESOME");
 awesome.addStudent(student);
 awesome.addStudent(john);
 awesome.addMentor(mentor);

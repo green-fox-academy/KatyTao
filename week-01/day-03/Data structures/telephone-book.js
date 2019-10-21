@@ -7,9 +7,9 @@ book.set(`Brooke P. Askew`, `307-687-2982`);
 
 console.log(book.get(`John K. Miller`)); //What is John K. Miller's phone number?
 for (let [key, value] of book) {
-    if (value === `307-687-2982`) {
-        console.log(key);
-    }
+  if (value === `307-687-2982`) {
+    console.log(key);
+  }
 }
 
 console.log(book.has(`Chris E. Myers`)); //Do we know Chris E. Myers' phone number?

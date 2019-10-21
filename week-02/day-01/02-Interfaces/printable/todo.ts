@@ -1,6 +1,6 @@
 import Printable from "./printable";
 
-`use strict`
+`use strict`;
 class Todo implements Printable {
   mainItem: string;
   subItem: string[];
@@ -10,10 +10,10 @@ class Todo implements Printable {
   }
   toSubString(): string {
     let subString = ``;
-    if(this.subItem!==[]) {
-      this.subItem.forEach(item =>{
-        subString += ` -${item}\n`
-      })
+    if (this.subItem !== []) {
+      this.subItem.forEach(item => {
+        subString += ` -${item}\n`;
+      });
     }
     return subString;
   }
@@ -21,4 +21,4 @@ class Todo implements Printable {
     console.log(`${this.mainItem}\n${this.toSubString()}`);
   }
 }
-export {Todo};
+export { Todo };
