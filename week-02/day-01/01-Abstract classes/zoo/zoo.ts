@@ -64,4 +64,4 @@ class Bird extends Animal {
     }   
 }
 
-export{Reptile, Mammal, Bird};
+export{Reptile, Mammal, Bird, Animal};
