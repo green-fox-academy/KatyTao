@@ -1,4 +1,4 @@
-class Aircrafts {
+export default class Aircraft {
   constructor(type, maxAmmo, baseDamage, ammoStorage = 0) {
     this.type = type;
     this.maxAmmo = maxAmmo;
@@ -21,36 +21,20 @@ class Aircrafts {
       this.ammoStorage + number > this.maxAmmo ? number - this.ammoStorage : 0;
     return this.remainAmmo;
   }
+
   getType() {
     return this.type;
   }
+
   getStatus() {
     return `Type ${this.type}, Ammo: ${this.ammoStorage}, Base Damage: ${this.baseDamage}, All Damage: ${this.damage}`;
   }
+
   isPriority() {
     if (this.type === `F35`) {
       return true;
     } else if (this.type === `F16`) {
       return false;
     }
-  }
-}
-
-class Carrier {
-  constructor(aircraftsList = [], initialAmmo, health) {
-    this.aircraftsList = aircraftsList;
-    this.initialAmmo = initialAmmo;
-    this.health = health;
-  }
-  add(aircraft) {
-    if (aircraft instanceof Aircrafts) {
-      this.aircraftsList.push(aircraft);
-    }
-  }
-  fill() {
-    this.totalNeedsAmmo = this.aircraftsList.map(aircraft => {});
-    this.aircraftsList.forEach(item => {
-      this.initialAmmo += item.refill(item.maxAmmo);
-    });
   }
 }

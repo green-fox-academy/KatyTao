@@ -7,20 +7,9 @@ class PostIt {
   }
 }
 
-const textOne = new PostIt();
-textOne.backgroundColor = `Orange`;
-textOne.text = `Idea 1`;
-textOne.textColor = `blue`;
-
-const textTwo = new PostIt();
-textTwo.backgroundColor = `pink`;
-textTwo.text = `Awesome`;
-textTwo.textColor = `black`;
-
-const textThree = new PostIt();
-textThree.backgroundColor = `green`;
-textThree.text = `Superb!`;
-textThree.textColor = `yellow`;
+const textOne = new PostIt(`Oragne`, `Idea 1`, `blue`);
+const textTwo = new PostIt(`Pink`, `Awesome`, `black`);
+const textThree = new PostIt(`Green`, `Superb!`, `yellow`);
 
 console.log(textOne);
 console.log(textTwo);
