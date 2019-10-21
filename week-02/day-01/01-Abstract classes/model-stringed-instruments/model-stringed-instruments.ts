@@ -10,7 +10,6 @@ abstract class StringedInstrument extends Instrument {
 }
 
 class ElectricGuitar extends StringedInstrument {
-  soundName: string;
   constructor(numberOfStrings: number = 6) {
     super();
     this.numberOfStrings = numberOfStrings;
@@ -25,7 +24,6 @@ class ElectricGuitar extends StringedInstrument {
 }
 
 class BassGuitar extends StringedInstrument {
-  soundName: string;
   constructor(numberOfStrings: number = 4) {
     super();
     this.numberOfStrings = numberOfStrings;
@@ -39,7 +37,6 @@ class BassGuitar extends StringedInstrument {
 }
 
 class Violin extends StringedInstrument {
-  soundName:string;
   constructor(numberOfStrings: number = 4) {
     super();
     this.numberOfStrings = numberOfStrings;
