@@ -1,15 +1,4 @@
-function Apple(type) {
-  this.type = type;
-  this.color = 'red';
-}
-
-Apple.prototype.getInfo = function() {
-  return this.color + ' ' + this.type + ' apple';
-};
-
-var apple = new Apple(`red apple`).getInfo();
-console.log(apple);
-
+`use strict`
 
 function Garden(width, length) {
   this.width = width;
@@ -30,5 +19,14 @@ Garden.prototype.efficiency = function() {
   console.log(`the area is ` + this.area() + `and the circumference is ` + this.circumference());
 }
 
-var garden = new Garden(4,5);
-console.log(garden.efficiency());
+function Playground(width, length, toys) {
+  Garden.call(this, width, length);
+  this.toys = toys;
+}
+
+Playground.prototype = Object.create(Garden.prototype);
+Playground.prototype.constructor = Garden;
+
+Playground.prototype.add = function(toy) {
+  this.toys.push(toy);
+}
