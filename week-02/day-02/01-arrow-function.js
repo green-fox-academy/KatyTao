@@ -8,14 +8,17 @@ function exampleNonAnonymFunction(param) {
   return param * param;
 }
 
-function frameFunction(num) {
+function frameFunction() {
   // this function call shows an example,
   // but it is not using anonym functions
   multiPurposeFunction(exampleNonAnonymFunction());
   // write your code here
-  const result = () =>{
-    return exampleNonAnonymFunction(num);
-  }
+  multiPurposeFunction(function(param){
+    return param*param;
+  });
+
+  multiPurposeFunction((param) => param * param);
+
 }
 
-console.log(frameFunction());
+frameFunction();
