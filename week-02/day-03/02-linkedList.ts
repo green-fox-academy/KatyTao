@@ -80,5 +80,4 @@ class myLink extends MyNode implements LinkedList{
   size(): number {
     return this.sizeNum;
   }
-
 }
