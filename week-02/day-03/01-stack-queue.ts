@@ -1,5 +1,5 @@
-import Queue from "./01-queue";
-import Stack from "./01-stack";
+`use strict`
+import { Stack, Queue } from "./interface";
 
 class newStack implements Stack {
   items: any;
