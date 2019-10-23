@@ -27,7 +27,7 @@ class MyLink implements LinkedList{
     this.sizeNum +=1;
   }
     
-  get(index: number): any {
+  public get(index: number): any {
     let node = this.head;
     for(let i = 0; i < index; i++ ){
       node = node.next;
@@ -35,7 +35,7 @@ class MyLink implements LinkedList{
     return node.value;
   }
   
-  removeItem(value: string): void {
+  public removeItem(value: string): void {
     if (this.sizeNum < 1) {
       return null;
     }
@@ -60,7 +60,7 @@ class MyLink implements LinkedList{
     }
   }
 
-  remove(index: number): string {
+  public remove(index: number): string {
     let node = this.head;
     let current = node;
     if(index === 0) {
@@ -77,7 +77,7 @@ class MyLink implements LinkedList{
     return this.item;
   }
 
-  size(): number {
+  public size(): number {
     return this.sizeNum;
   }
 }
