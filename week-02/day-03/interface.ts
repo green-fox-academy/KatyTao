@@ -21,3 +21,8 @@ export interface LinkedList {
   remove(index: number): string;
   size(): number;
 }
+
+export interface TheNode {
+  value:string;
+  next:TheNode;
+}

@@ -1,3 +1,4 @@
+`use strict`
 import {LinkedList} from "./interface";
 import MyNode from "./node";
 class myLink extends MyNode implements LinkedList{

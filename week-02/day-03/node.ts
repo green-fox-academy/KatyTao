@@ -1,8 +1,7 @@
 export default class MyNode{
-  value: any;
-  next: any;
-  constructor(value,next){
+  value: string;
+  next: MyNode;
+  constructor(value: string){
     this.value = value;
-    this.next = next;
   }
 }
