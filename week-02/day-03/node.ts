@@ -1,7 +1,8 @@
 export default class MyNode{
-  value: string;
-  next: MyNode;
+  public value: string;
+  public next?: MyNode;
   constructor(value: string){
     this.value = value;
+    this.next = null;
   }
 }
