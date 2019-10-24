@@ -1,7 +1,7 @@
 `use strict`
 import {LinkedList} from "./interface";
 import MyNode from "./node";
-class MyLink implements LinkedList{
+export class MyLink implements LinkedList{
   public item: string;
   public next: MyNode;
   public head: MyNode;

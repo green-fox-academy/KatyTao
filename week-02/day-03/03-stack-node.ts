@@ -1,19 +1,18 @@
 import MyNode from "./node";
-import { Stack, TheNode } from "./interface";
+import { Stack } from "./interface";
+import { MyLink } from "./02-linkedList";
 
 `use strict`
 
-class StackNode extends MyNode implements Stack{
+class StackNode implements Stack{
   value:string;
   head:MyNode;
-  constructor(value:string) {
-    super(value);
-    this.value = value;
+  constructor() {
     this.head = new MyNode(null);
   }
 
   empty(): boolean {
-    return this.head.next === undefined;
+    return this.head.next === undefined||this.head.next === null;
   }
 
   peek(): string { 
@@ -31,7 +30,7 @@ class StackNode extends MyNode implements Stack{
     let previous = this.head;
     let current = this.head.next;
     const newNode = new MyNode(value);
-    newNode.next = current.next;
+    newNode.next = current;
     previous.next = newNode;
   }
 
@@ -42,6 +41,15 @@ class StackNode extends MyNode implements Stack{
   }
 }
 
-let testNode = new StackNode(`1`);
+let testNode = new StackNode();
+console.log(testNode.empty());
+testNode.push(`1`);
 testNode.push(`2`);
 console.log(testNode);
+console.log(testNode.head.next);
+
+console.log(testNode.empty());
+
+console.log(testNode);
+
+
