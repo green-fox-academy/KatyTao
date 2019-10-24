@@ -1,9 +1,9 @@
 `use strict`;
 export default class Plants {
-  public waterAmount: number;
+  protected waterAmount: number;
   protected name: string;
   protected minimumWater: number;
-  public absorbWater: number;
+  protected absorbWater: number;
   constructor(name: string, waterAmount: number = 0) {
     this.name = name;
     this.waterAmount = waterAmount;
