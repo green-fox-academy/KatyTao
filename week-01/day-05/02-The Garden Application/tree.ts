@@ -8,3 +8,4 @@ export default class Tree extends Plants {
     this.minimumWater = 10;
   }
 }
+
