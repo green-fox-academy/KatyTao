@@ -1,0 +1,31 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.outer-wrapper{
+  width: 380px;
+  border:16px rgb(66, 133, 244) solid;
+  margin-bottom: 5px;
+}
+
+.inner-wrapper{
+  width: 100%;
+  padding-top:50px;
+  padding-bottom: 50px;
+}
+
+.outer-wrapper:nth-child(1) .inner-wrapper{
+  background-color: rgb(230, 118, 118);
+}
+
+.outer-wrapper:nth-child(2) .inner-wrapper{
+  background-color: rgb(169, 230, 230);
+}
+
+.inner-wrapper>p{
+  text-align: center;
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
