@@ -1,0 +1,38 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.outer-wrapper{
+  width: 380px;
+  border:16px rgb(66, 133, 244) solid;
+}
+
+.inner-wrapper{
+  width: 100%;
+  padding-top:50px;
+  padding-bottom: 50px;
+}
+
+.inner-wrapper:nth-child(1){
+  background-color: rgb(230, 118, 118);
+}
+
+.inner-wrapper:nth-child(2){
+  background-color: rgb(242, 240, 98);
+}
+
+.inner-wrapper:nth-child(3){
+  background-color: rgb(169, 230, 230);
+}
+
+.inner-wrapper:nth-child(4){
+  background-color: rgb(118, 146, 228);
+}
+
+.inner-wrapper>p{
+  text-align: center;
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}

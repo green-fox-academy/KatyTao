@@ -1,0 +1,7 @@
+input[type="submit"] {
+  background-color: lightblue;
+}
+
+label::after {
+  content: ":";
+}

@@ -1,0 +1,23 @@
+*{
+  font-size: 16px;
+  margin:0;
+  padding:0;
+}
+
+.green-box{
+  background-color:rgb(14, 145, 161) ;
+  display: block;
+  width: 360px;
+  height: 143px;
+  margin-bottom: 16px;
+  border:5px rgb(125, 206, 148) solid;
+}
+
+.green-box p{
+  font-size: 36px;
+  margin:20px 15px;
+  color: rgb(0, 85, 102);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
