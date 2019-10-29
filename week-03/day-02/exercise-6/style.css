@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-layout {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+nav {
+  height: 64px;
+  background-color: rgb(176, 42, 255);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .left-nav, nav .right-nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  height: 35px;
+  background-color: rgb(42, 234, 255);
+}
+
+nav .left-nav a {
+  width: 110px;
+  margin-left: 20px;
+}
+
+nav .left-nav a:nth-child(2) {
+  width: 85px;
+}
+
+nav .right-nav a {
+  width: 35px;
+  margin-right: 20px;
+}
+
+.main-content {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  background-color: rgb(255, 214, 42);
+}
+
+.content .text-content, .content .box-list, .content .left-bottom-text {
+  width: 90%;
+  padding-top: 26px;
+  margin:0 auto;
+}
+
+.content .box-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .box-list .red-box {
+  width: 20%;
+}
+
+.content .box-list .red-box p {
+  width: 100%;
+  height: 0px;
+  background-color: rgb(233, 0, 32);
+  padding-bottom: 100%;
+}
+
+.content .left-bottom-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .left-bottom-text .text-col {
+  width: 45%;
+}
+
+.right-sidebar {
+  width: 250px;
+  background-color: rgb(81, 212, 0);
+}
+
+.right-sidebar .purple-bar-list, .right-sidebar .text-list {
+  width: 90%;
+  padding-top: 26px;
+  margin: 0 auto;
+}
+
+.right-sidebar .text-list p:nth-child(2), .right-sidebar .text-list p:nth-child(4) {
+  padding-bottom: 20px;
+}
+
+.right-sidebar .purple-bar-list .purple-bar {
+  background-color: rgb(82, 53, 89);
+  width: 100%;
+  height: 45px;
+  margin-top: 7px;
+}
