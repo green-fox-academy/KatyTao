@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin:5%;
+  height: 100vh;
+}
+
+main nav {
+  width: 100%;
+  height: 63px;
+  background-color: rgb(176, 42, 255);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main nav a {
+  height: 36px;
+  background-color: rgb(42, 234, 255);
+  margin-left: 34px;
+  width: 110px;
+}
+
+nav a:nth-child(2) {
+  width: 100px;
+}
+
+main .main-body {
+  display: flex;
+  width: 100%;
+  height: 506px;
+}
+
+main .main-body .main-content {
+  width: 70%;
+  background-color: rgb(255, 214, 42);
+}
+
+main .main-body .side-bar {
+  width: 30%;
+  background-color: rgb(81, 212, 0);
+}
