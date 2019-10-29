@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 280px;
+  width: 100%;
+  background:rgb(255, 214, 42);
+  display: flex;
+  list-style-type:none;
+  align-items: center;
+}
+
+.container .item {
+  height: 108px;
+  width: 108px;
+  background-color:rgb(176, 42, 255);
+}
+
+.exercise-1 {
+  justify-content: flex-start;
+}
+
+.exercise-1 .item {
+  margin-right: 7px;
+}
+
+.exercise-2 {
+  justify-content: space-between;
+}
+
+.exercise-3 {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.exercise-3 .item {
+  margin-left: 7px;
+}
