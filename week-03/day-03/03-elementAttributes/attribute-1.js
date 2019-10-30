@@ -5,7 +5,7 @@ console.log(document.querySelector('img').src);
 // Replace the image with a picture of your favorite animal.
 
 document.querySelector("img").src = "https://alaynakbaker.files.wordpress.com/2016/12/golden.jpg";
-
+//document.querySelector("img").setAttribute("src", "https://alaynakbaker.files.wordpress.com/2016/12/golden.jpg");
 // Make the link point to the Green Fox Academy website.
 
 document.querySelector("a").href = "https://www.greenfoxacademy.com/";
