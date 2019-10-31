@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Delayed Click</title>
+</head>
+<body>
+<button class="delay-btn">Click Me</button>
+<h2></h2>
+<script>
+let duration;
+window.addEventListener('load', duration = new Date());
+const btnClick = document.querySelector('.delay-btn');
+let count = 0;
+btnClick.addEventListener('click', function() {
+  if (new Date() - duration >= 5000) {
+    count++;
+    console.log(count);
+    if(count === 3) {
+      document.querySelector('h2').textContent = '5 seconds elapsed and clicked 3 times';
+      return;
+    }
+  }
+});
+// window.addEventListener('load',clickDetect());
+</script>
+</body>
+</html>
