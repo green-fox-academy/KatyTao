@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="08-style.css">
+  <title>Infinite Scroll</title>
+</head>
+<body>
+<script>
+  function initialDiv(num) {
+    const element = [...Array(num)].map(() => `<div style='background-color:rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})'></div>`).join('');
+    document.body.insertAdjacentHTML('beforeend', element);
+  }
+  const initialNum = Math.floor(Math.random()*10);
+  initialDiv(initialNum);
+  const scrollThreshold = 300;
+  window.addEventListener('scroll', function() {
+    if (getBottomDistance() < scrollThreshold) {
+      initialDiv(10);
+    }
+    console.log(`scroll Top: ${window.scrollY}`);
+    console.log(`To bottom: ${window.innerHeight-scrollThreshold}`);        
+  })
+
+  function getBottomDistance() {
+    const element = document.documentElement;
+    return element.scrollHeight - element.scrollTop - element.clientHeight;
+  }
+</script>  
+</body>
+</html>
