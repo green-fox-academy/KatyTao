@@ -5,7 +5,7 @@ const loliyBtn = document.querySelector('.buy-lollypops');
 const speedDisplay = document.querySelector('.speed');
 const speedBtn = document.querySelector('.candy-machine');
 let candyCount = 0, loliyCount = countLoliyPop(), speed = 1.0;
-let numPerSec = 1;
+let numPerSec = 0;
 
 function countLoliyPop() {
   return loliyDisplay.textContent.toString().match(new RegExp("🍭", "g")).length;
