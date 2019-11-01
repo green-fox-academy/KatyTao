@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body {
+    background-color: #f2f2f2;
+  }
+  .container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 5px;   
+    padding: 30px;
+  }
+  .container img {
+    width: 300px;
+    display: block;
+    margin: 20px auto 50px auto;
+  }
+  .container h2 {
+    text-align: center;
+  }
+  .container .news-display p:nth-child(3){
+    color: gray;
+  }
+</style>
+<body>
+  <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/The_New_York_Times_logo.png" alt="">
+    <div class="news-list">
+    </div>
+  </div>
+
+  <script>
+    let newsQuery = 'moon+landing+Apollo+11';
+    const apiKey = 'TdmeBmcy6f9fikZEDR7X96dMtme9nCS4';
+    const URL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${newsQuery}&api-key=${apiKey}`;
+    const xhr = new XMLHttpRequest();
+    function getNews() {
+      let html = '';
+      xhr.open('GET', URL, true);
+      xhr.onload = (data) => {   
+        let resText = JSON.parse(xhr.responseText).response.docs;
+        console.log(resText);
+        //Retrieve responded articles array
+        resText.forEach(element => {
+          const headline = element.headline.main;
+          const snippet = element.snippet;
+          const date = element.pub_date;
+          const link = element.web_url;
+          html += `<div class="news-display"><hr><h3>${headline}</h3><p>${date}</p>permalink: <a target="_blank" href=${link}>${link}</a><p>${snippet}</p></div>`;
+        });
+        const displayBox = document.querySelector('.news-list');
+        displayBox.innerHTML = html;
+      }
+      xhr.send();
+    }
+    getNews();
+  </script>
+</body>
+</html>
