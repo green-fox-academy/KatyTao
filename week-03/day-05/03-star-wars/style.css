@@ -1,0 +1,100 @@
+@import url(//db.onlinewebfonts.com/c/c00548f5d217ed324ae9096051927001?family=STARWARS);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+}
+
+.header img {
+  height: 100px;
+}
+
+.header h1 {
+  color: rgb(255, 213, 9);
+  font-family: 'STARWARS';
+  font-weight: 500;
+  font-size: 3rem;
+  margin-left: 50px;
+}
+
+.container {
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.container .search-field {
+  background-image: url(./img/background.jpg);
+  width: 100%;
+}
+
+.search-wrap {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.container .search-field .search-wrap h2 {
+  color: rgb(255, 213, 9);
+  font-family: 'STARWARS';
+  font-weight: 200;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.search-wrap input[type='text'] {
+  width: 70%;
+  font-size: 2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border:3px rgb(255, 213, 9) solid;
+}
+
+.search-wrap input[type='submit'] {
+  width: 20%;
+  font-size: 2rem;
+  padding: 8px 10px;
+  float: right;
+  border-radius: 20px;
+  border-style: none;
+  border:2px rgb(255, 213, 9) solid;
+  background-color: white;
+  color: black;
+  font-family: 'STARWARS';
+}
+
+.search-wrap input[type='submit']:hover {
+  background-color: rgb(255, 213, 9);
+  transition-duration: 0.5s;
+}
+
+.result-container {
+  width: 80%;
+  padding: 50px 10%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.result-container .heroes-list {
+  width: 50%;
+}
+
+.hero-info hr {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.hero-info .hero-detail {
+  display: flex;
+}
+
+.hero-info .hero-detail p {
+  width: 50%;
+}
+
