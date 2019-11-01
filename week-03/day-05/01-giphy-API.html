@@ -17,6 +17,7 @@
 const submitBtn = document.querySelector("input[name='submit']");
 const imgList = document.querySelector('.img-list');
 let imageStaticList = {};
+//click submit event
 submitBtn.addEventListener('click', function() {
   imgList.innerHTML = '';
   const inputText = document.querySelector('input[name=keyword]').value;
