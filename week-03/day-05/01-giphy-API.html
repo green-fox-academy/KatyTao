@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<h2>Please input your keywords!</h2>
+<input type="text" name="keyword" value="" />
+<input type="submit" name="submit" value = "Submit!"/>
+<div class="img-list">
+
+</div>
+<script type="text/javascript">
+const submitBtn = document.querySelector("input[name='submit']");
+const imgList = document.querySelector('.img-list');
+let imageStaticList = {};
+submitBtn.addEventListener('click', function() {
+  imgList.innerHTML = '';
+  const inputText = document.querySelector('input[name=keyword]').value;
+  const keywords = inputText.split(' ').join('+');
+  const URL = `http://api.giphy.com/v1/gifs/search?q=${keywords}&api_key=vlDyneiQNNISVOAYwSts8PdWPXP94G8X&limit=16`;
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', URL, true);
+  xhr.onload = (data) => { 
+    console.log("success got data", data); 
+    JSON.parse(xhr.responseText).data.forEach(element => {
+      console.log(element.images.downsized.url);
+      imgList.insertAdjacentHTML('beforeend',`<img width='200px' src=${element.images.downsized_still.url}/>`);
+    });
+    imageStaticList = document.querySelectorAll('img');
+    // click to become gif
+    for (let i = 0; i<imageStaticList.length; i++) {
+      imageStaticList[i].addEventListener('click', function() {
+      let gifSrc = this.src.toString().replace(new RegExp('_s','g'),'');
+      this.src = gifSrc;
+      });
+    }
+  };
+  xhr.send();
+})
+
+
+  // imageStaticList.forEach.addEventListener('click', function() {
+  //   console.log(this);
+  // })
+</script>
+</body>
+</html>
