@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Button from './button';
 import Display from './display';
+import PropTypes from 'prop-types';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -44,3 +45,10 @@ class App extends Component {
   }
 }
 export default App;
+
+App.PropTypes = {
+  numOfAcorn:PropTypes.number,
+  handleIncrement:PropTypes.func,
+  handleDecrease:PropTypes.func,
+  keyPress:PropTypes.func,
+}
