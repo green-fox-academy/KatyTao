@@ -58,10 +58,29 @@ form button {
   align-items: center;
 }
 
-.bin-icon {
+.icon-list {
+  display: flex;
+}
+
+.bin-icon, .check-icon {
   width: 30px;
   height: 30px;
+  border:none;
+  box-shadow: none;
+  margin: 0;
+  text-decoration: none;
+  background: none;  
+}
+
+.bin-icon {
   margin-right: 20px;
+  background-image: url("./img/bin.svg");
+  background-size: contain;
+}
+
+.check-icon {
+  background-image: url("./img/check.svg");
+  background-size: contain;
 }
 
 .button-text {

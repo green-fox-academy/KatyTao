@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './components/button'
-import TaskList from './components/taskList';
+import TaskList from './components/task-list';
 import './App.css';
 export default class App extends React.Component{
   constructor(props) {
@@ -44,6 +44,7 @@ export default class App extends React.Component{
           <TaskList items={this.state.list}/> 
         </section>
       </main>
+      
     )
   }
 }

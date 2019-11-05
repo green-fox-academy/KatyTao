@@ -3,14 +3,6 @@ import ReactDOM from 'react-dom';
 import CheckBox from './components/check-box';
 import HotelList from './components/hotel-list';
 import './index.css';
-// import FirstComponent from './first-component';
-// import SecondComponent from './second-component';
-// let element = <FirstComponent />;
-
-// ReactDOM.render(element, document.getElementById('react-container'));
-
-// let element2 = <SecondComponent items = {['a','b','c']} />;
-// ReactDOM.render(element2,document.getElementById('react-container'));
 let data = {
   filters: {
     'Star rating': [
