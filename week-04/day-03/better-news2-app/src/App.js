@@ -16,6 +16,7 @@ function App() {
      }
     xhr.send();
   }
+
   const updateCountry = () => {
     const code = document.querySelector(".country-code");
     setCountry(code.value);
@@ -25,7 +26,6 @@ function App() {
     getNews();
   },[country]);
 
-  getNews();
   return(
     <>
     <input className="country-code" type="text"/>
