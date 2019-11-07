@@ -70,6 +70,10 @@ function App() {
       }
   }
 
+  function thumbClick(index) {
+    console.log(index); 
+  }
+
   return (
     <main>    
       <section className="slider-wrapper">
@@ -78,7 +82,7 @@ function App() {
         <SliderBtn clickFunc={RightSlide} className="right-arrow" />
       </section>
       <section className="thumb-wrapper">
-        <ThumbDisplay activeIdx={ActivateIdx} imgSet={imgSet}/>
+        <ThumbDisplay clickFunc={thumbClick} activeIdx={ActivateIdx} imgSet={imgSet}/>
       </section>
     </main>
   );

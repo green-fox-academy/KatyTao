@@ -57,6 +57,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .btn-section button {
@@ -65,7 +66,6 @@ main {
 	border: none;
 	padding: 0;
 	font: inherit;
-	cursor: pointer;
   outline: inherit;
   padding: 20px;
 }
@@ -94,6 +94,7 @@ main {
   margin: 30px 5px 20px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.58);
   position: relative;
+  transition-duration: 0.5s;
 }
 
 .img-box img{
@@ -104,10 +105,7 @@ main {
 
 main .thumb-wrapper > .active, .img-box:hover{
   transform:translateY(-10px);
-  transition-duration: 1s;
 }
-
-
 
 .active:before {
   bottom: 100%;
