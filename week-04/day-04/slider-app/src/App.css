@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#root, main {
+  width: 100%;
+  height: 100vh;
+}
+
+#root {
+  background-image: url("https://www.desktopbackground.org/p/2014/10/30/848001_peach-or-light-orange-microfiber-cloth-fabric-texture-picture_3600x2400_h.jpg");
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slider-wrapper {
+  width: 75%;
+  display: flex;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.58);
+}
+
+.slider-container {
+  width: 80%; 
+  /* TODO: delete after add btns */
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider-container img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.slider-container .slider-banner {
+  position: absolute;
+  bottom: 0;
+  background:rgba(0, 0, 0, 0.58);
+  width: 100%;
+  height: 120px;
+  /* transform: translate(-50%, -50%); */
+}
+
+.slider-banner h2, .slider-banner p {
+  color: white;
+  padding: 10px 20px;
+}
+
+.btn-section {
+  width: 10%;
+  background-color: rgb(252, 252, 252);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-section button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+  outline: inherit;
+  padding: 20px;
+}
+
+.btn-section:hover button{
+  opacity: 0.5;
+  transition-duration: 1.2s;
+}
+
+.btn-section button img {
+  width: 25px;
+}
+
+.right-arrow {
+  transform: rotate(180deg);
+}
+
+.thumb-wrapper {
+  width: 75%;
+  display: flex;
+}
+.img-box {
+  background-color: white;
+  display: inline-block;
+  padding: 5px;
+  margin: 30px 5px 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.58);
+  position: relative;
+}
+
+.img-box img{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+main .thumb-wrapper > .active, .img-box:hover{
+  transform:translateY(-10px);
+  transition-duration: 1s;
+}
+
+
+
+.active:before {
+  bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-bottom-color: #ffff;
+	border-width: 10px;
+	margin-left: -10px;
+}
