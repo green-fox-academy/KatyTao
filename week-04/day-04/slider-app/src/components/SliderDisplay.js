@@ -8,7 +8,7 @@ export default function SliderDisplay(props) {
         <img src={props.img.url} alt={props.img.alt}/>
         <div className="slider-banner">
           <h2>{props.img.alt}</h2>
-          <p>lorem ipsum</p>
+          <p>{props.img.description}</p>
         </div>
       </div>
     </React.Fragment>
