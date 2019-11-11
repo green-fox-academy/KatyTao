@@ -1,9 +1,5 @@
 const { createStore, combineReducers } = require('redux');
 
-const initialState = {
-  counter: 0,
-  tags: [],
-}
 
 const SET = 'SET';
 const INCREASE = 'INCREASE';

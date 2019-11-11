@@ -1,16 +1,16 @@
 import React from 'react';
-import {createStore} from 'redux';
 import './App.css';
-import Counter from './counter/index';
+import Increaser from './components/increaser';
 import { Provider } from 'react-redux';
-import counter from './counter/reducer';
+import {createStore} from 'redux';
+import {counterReducer} from './reducers/counterReducer';  
 
-const store = createStore(counter);
+const store = createStore(counterReducer);
 
 function App() {
   return (
     <Provider store={store}>
-      <Counter />
+      <Increaser/>
     </Provider>
   );
 }
