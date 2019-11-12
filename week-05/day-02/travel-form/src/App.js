@@ -10,8 +10,9 @@ export default function App() {
     const lastName = `Last name: ${data.lastName}\n`;
     const age = `Age: ${data.age}\n`;
     const gender = `Gender: ${data.gender}\n`;
-    const location = `Location: ${data.destination}\n`;
-    const restriction = `Dietary restrictions:${Object.keys(data.restrict).join(",")}`;
+    const location = `Location: ${data.location}\n`;
+
+    const restriction = `Dietary restrictions:${Object.keys(data.restrict).filter((key)=>data.restrict[key]).join(",")}`;
     alert(
       firstName+lastName+age+gender+location+restriction
     ) 
