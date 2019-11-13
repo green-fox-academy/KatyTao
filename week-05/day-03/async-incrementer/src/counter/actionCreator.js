@@ -20,3 +20,14 @@ export function increaseCounterBy(value) {
     payload: value
   };
 }
+
+export function increaseWithDelay(value,delayTime) {
+  return dispatch => {
+    setTimeout(()=>{
+      dispatch({
+        type: INCREASE_BY_ACTION,
+        payload:value,
+      })
+    },delayTime)
+  }
+}
