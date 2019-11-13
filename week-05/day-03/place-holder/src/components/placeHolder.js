@@ -7,7 +7,6 @@ import {useDispatch, useSelector} from 'react-redux';
 export default function PlaceHolder() {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts);
-  console.log(posts);
   return(
     <>
     <button onClick={()=>{dispatch(fetchData())}}>Click me to fetch titles!</button>

@@ -22,7 +22,7 @@ export const fetchReducer = (state = initialState, action) =>{
     case FETCH_FAILED:
       return {
         loading: false,
-        posts:[{title:''}],
+        posts:[],
         error:action.payload,
         error_msg:'error happened'
       }
