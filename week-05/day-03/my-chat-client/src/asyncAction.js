@@ -46,8 +46,8 @@ export const fetchData = () => {
       .then(response => {
         return response.json()
       })
-      .then((response)=> call(fetchSuccess(response)))
-      .catch((response)=>{call(fetchFailed(response))})
+      .then((response)=> dispatch(fetchSuccess(response)))
+      .catch((response)=>dispatch(fetchFailed(response)))
   }
 }
 
