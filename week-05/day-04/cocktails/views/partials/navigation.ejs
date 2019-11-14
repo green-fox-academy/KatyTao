@@ -1,0 +1,7 @@
+<nav>
+    <a href="/">ALL</a>
+    <% alcoholList.forEach(item => {%>
+      <a href="?alcohol=<%= item %>"><%= item.toUpperCase() %></a>
+    <%})%>
+</nav>
+  

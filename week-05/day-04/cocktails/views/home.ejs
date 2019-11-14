@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cocktails</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <h1>Cocktails</h1>
+    <%- include('partials/navigation.ejs', {alcoholList}) %>
+    <section class="table-wrapper">
+      <section class="title-section">
+        <p>NAME</p>
+        <p>PRICE</p>
+      </section>
+      <section class="body-section">
+        <% resultList.forEach(item=>{%>
+          <section class="body-row">
+            <div class="body-left">
+              <p><span><%= item.name %></span><% if(!item.isAlcoholic){%> (non-alcoholic)<%}%></p>
+              <p><%= item.contains %></p>
+            </div>
+            <div class="body-right">
+              <p><%= item.price %>Ft</p>
+            </div>
+          </section>
+        <%}) %>
+      </section>
+    </section>
+    <!-- <p><%=resultList[0].name%></p> -->
+  </body>
+</html>

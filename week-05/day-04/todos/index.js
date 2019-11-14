@@ -15,15 +15,6 @@ app.get('/', (req,res) => {
   res.render('home', {todos:todos});
 })
 
-// // home page
-// app.get('/', (req,res) => {
-//   //render 'home.ejs'
-//   const { name } = req.query;
-//   const user = name!==undefined? name: 'Guest';
-//   res.render('home',{
-//     title: `Welcome back, ${user}!`,
-//   })
-// })
 
 // start express app on port 3000
 app.listen(PORT, () => {
