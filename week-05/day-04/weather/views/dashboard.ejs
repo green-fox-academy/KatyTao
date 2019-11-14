@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Weather Forecast</h1>
+    <section class="forecast-list">
+      <% forecasts.forEach(item=>{%>
+        <a class="card" href="/cities/<%= item.city %>">
+          <div class="location">
+            <p><%=item.city %></p>
+            <p><%=item.location %></p>
+          </div>
+          <p class="temperature"><%= item.weather[0].temp %>℃</p>
+          <img src="/static/assets/<%= item.weather[0].icon %>.png" alt="item.weather[0].icon" />
+        </a>
+      <%})%>
+    </section>
+
+  </body>
+</html>

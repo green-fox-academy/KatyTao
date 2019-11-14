@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  </head>
+  <body>
+    <section class="forecast-detail">
+      <h1><%= city %></h1>
+      <section class="detail-list">
+        <% weather.forEach(item=>{%>
+          <div class="card detail-card">
+            <img src="/static/assets/<%= item.icon %>.png" alt="<%= item.icon %>" />
+            <p class="temperature"><%= item.temp %>℃</p>
+            <p class="message"><%= item.message %></p>
+          </div>
+        <%})%>
+      </section>
+    </section>
+  </body>
+</html>
