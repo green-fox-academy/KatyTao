@@ -116,10 +116,11 @@ app.post('/arrays',(req,res) => {
 app.post('/sith',(req,res) => {
   const { text } = req.body;
   const sithSet = ["Arrgh.", "Uhmm.", "Err..err.err.", "Hmmm."];
+
   if(text) {
     let sithSentence = text.split(".");
     let result="";
-  
+
     sithSentence.forEach(text => {  
       let sithText = text.trim().split(" ");
       if(sithText[0]!=='') {
@@ -137,6 +138,28 @@ app.post('/sith',(req,res) => {
   } else {
     res.json({"error": "Feed me some text you have to, padawan young you are. Hmmm."});
   }
+})
+
+app.post('/translate', (req, res) => {
+  const { text, lang } = req.body;
+  let result;
+  if(text) {
+    let originalText = text.split("");
+    let resultText = [];
+    const rule=["a","e","i","o","u"];
+    originalText.forEach(text=>{
+      if(rule.includes(text)){
+        text = text+"l"+text;
+      }
+      console.log(text);
+      resultText.push(text);
+    })
+    result = {
+      translated: resultText.join(""),
+      lang: "gibberish"
+    }
+  }
+  res.json(result);
 })
 
 
