@@ -6,6 +6,9 @@ const PORT = 8080;
 
 //Add serving static assets to serve the folder
 app.use(express.static('assets'));
+//Add an new middleware, reads the body of request, and sent do end point
+app.use(express.json());
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
@@ -51,6 +54,35 @@ app.get('/appenda/:appendable', (req,res) => {
   "appended": appendable+'a',
  }
  res.json(result);
+})
+
+app.post('/dountil/:action', (req,res) => {
+  let { until } = req.body;
+  console.log(until);
+  const { action } = req.params;
+  let result;
+  if(until) {
+    until = Number(until);
+    switch(action){
+      case 'sum':
+        result = until*(until+1)/2;
+        res.json({result});
+        break;
+      case 'factor':
+        result = 1;
+        for (let i = 1; i<=until; i++) {
+          result*=i;
+        }
+        res.json({result});
+      default:
+        break;
+    }     
+  } else if(until === undefined) {
+    result = {
+      "error": "Please provide a number!"
+    }
+  }
+  res.json(result);
 })
 
 
