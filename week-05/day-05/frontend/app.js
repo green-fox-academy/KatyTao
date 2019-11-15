@@ -143,7 +143,7 @@ app.post('/sith',(req,res) => {
 app.post('/translate', (req, res) => {
   const { text, lang } = req.body;
   let result;
-  if(text) {
+  if(text&&lang) {
     let originalText = text.split("");
     let resultText = [];
     const rule=["a","e","i","o","u"];
@@ -151,12 +151,15 @@ app.post('/translate', (req, res) => {
       if(rule.includes(text)){
         text = text+"l"+text;
       }
-      console.log(text);
       resultText.push(text);
     })
     result = {
       translated: resultText.join(""),
       lang: "gibberish"
+    }
+  } else {
+    result = {
+      "error": "I can't translate that!"
     }
   }
   res.json(result);
