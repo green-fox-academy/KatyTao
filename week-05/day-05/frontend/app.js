@@ -140,6 +140,7 @@ app.post('/sith',(req,res) => {
   }
 })
 
+//The Gibberish translator Service
 app.post('/translate', (req, res) => {
   const { text, lang } = req.body;
   let result;
