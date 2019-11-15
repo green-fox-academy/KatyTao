@@ -42,8 +42,15 @@ app.get('/greeter', (req,res) => {
   } else {
     result = { error: 'Please provide a name and a title!' };
   }
-
   res.json(result);
+})
+
+app.get('/appenda/:appendable', (req,res) => {
+ const {appendable} = req.params;
+ result = {
+  "appended": appendable+'a',
+ }
+ res.json(result);
 })
 
 
