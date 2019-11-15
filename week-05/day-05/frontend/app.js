@@ -112,7 +112,35 @@ app.post('/arrays',(req,res) => {
   }
 })
 
+//The Reverser of the Sith
+app.post('/sith',(req,res) => {
+  const { text } = req.body;
+  const sithSet = ["Arrgh.", "Uhmm.", "Err..err.err.", "Hmmm."];
+  if(text) {
+    let sithSentence = text.split(".");
+    let result="";
+  
+    sithSentence.forEach(text => {  
+      let sithText = text.trim().split(" ");
+      if(sithText[0]!=='') {
+        for (let i=0; i<sithText.length-1; i+=2) {
+          let temp = sithText[i+1];
+          sithText[i+1] = sithText[i];    
+          sithText[i] = temp;
+        }
+        let sith_text = sithText.join(" ");
+        sith_text = sith_text.charAt(0).toUpperCase() + sith_text.slice(1).toLowerCase();
+        result += `${sith_text}. ${sithSet[Math.floor(Math.random() * 3)]} `;
+      }
+    });  
+    res.json({sith_text:result.trim()});
+  } else {
+    res.json({"error": "Feed me some text you have to, padawan young you are. Hmmm."});
+  }
+})
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
+
