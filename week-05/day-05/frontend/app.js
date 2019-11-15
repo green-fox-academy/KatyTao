@@ -27,7 +27,6 @@ app.get('/doubling', (req, res) => {
       "error": "Please provide an input!"
     }
   }
-  console.log(result);
   res.json(result);
 })
 
@@ -58,7 +57,6 @@ app.get('/appenda/:appendable', (req,res) => {
 
 app.post('/dountil/:action', (req,res) => {
   let { until } = req.body;
-  console.log(until);
   const { action } = req.params;
   let result;
   if(until) {
@@ -83,6 +81,35 @@ app.post('/dountil/:action', (req,res) => {
     }
   }
   res.json(result);
+})
+
+//array handler
+app.post('/arrays',(req,res) => {
+  let { what, numbers } = req.body;
+  let result = 0;  
+  if(what&&numbers) {
+    switch(what) {
+      case 'sum':
+        result = numbers.reduce((a, b) => a + b, 0);
+        res.json({result});
+        break;
+      case 'multiply':
+        result = numbers.reduce((a, b) => a * b, 1);
+        res.json({result});
+        break;
+      case 'double':
+        result = numbers.map(item =>{
+          return item*2;
+        })
+        res.json({result});
+        break;
+    }
+  } else {
+    result = {
+      "error": "Please provide what to do with the numbers!"
+    };
+    res.json(result);
+  }
 })
 
 
