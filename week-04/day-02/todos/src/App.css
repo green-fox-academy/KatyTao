@@ -38,8 +38,8 @@ form button {
   background-color: rgb(221, 110, 230);
   border:1px solid rgb(184, 184, 184);
   border-left: none;
-  color: white;
-  font-size: 1.2em;
+  color: #ffffff;
+  font-size: 26px;
 }
 
 .heading {
@@ -56,6 +56,10 @@ form button {
   color: #b8b8b8;
   display: flex;
   align-items: center;
+}
+
+.todo-item .uncompleted {
+  color: rgb(221, 221, 221);
 }
 
 .icon-list {

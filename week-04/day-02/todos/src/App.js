@@ -6,30 +6,54 @@ export default class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      value:'',
       list:[
         {
           text: 'Feed the monkey',
-          todo: 1,
+          completed: 1,
         },
         {
           text: 'Buy milk',
-          todo:0,
+          completed:0,
         },
         {
           text: 'Sleep 8 hours',
-          todo: 1,
+          completed: 1,
         },
         {
           text: 'Mentoring others',
-          todo: 1,
+          completed: 1,
         }
-    ]
+    ],
   }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange(event){
+    const temp={value:event.target.value};    
+    this.setState(temp);
+  }
+
   handleSubmit(event) {
-    console.log();
+    let temp = [...this.state.list];
+    temp.push({text:this.state.value,completed:0});
+    this.setState({value:'',list:temp});     
+    event.preventDefault();
+  }
+
+  handleCheckClick(clickedIndex) {
+    let temp = [...this.state.list];    
+    temp[clickedIndex].completed = this.state.list[clickedIndex].completed===0?1:0; 
+    this.setState(temp);
+  }
+  
+  handleDelete(clickedIndex) {
+    let temp = [...this.state.list];
+    let tempValue = this.state.value;
+    temp.splice(clickedIndex,1);
+    this.setState({value:tempValue,list:temp});    
   }
 
   render() {
@@ -41,7 +65,7 @@ export default class App extends React.Component{
           <Button onClick={this.handleSubmit} text="Add"/>
         </form>
         <section>
-          <TaskList items={this.state.list}/> 
+          <TaskList items={this.state.list} CheckClick={(index)=>this.handleCheckClick(index)} DeleteClick={(index)=>this.handleDelete(index)}/> 
         </section>
       </main>
       
