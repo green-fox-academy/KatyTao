@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Category</th>
+      <th>Publisher</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>
+        <select onchange="location = this.value;">
+          <option value="/books">Category</option>
+          <option value="/books">All</option>
+          <% category.forEach(item => {%>
+            <option value="/books?cat=<%= item.cate_descrip %>"><%= item.cate_descrip %></option>
+          <%})%>
+        </select>
+      </th>
+      <th>
+        <select onchange="location = this.value;">
+          <option value="/books">Publisher</option>
+          <option value="/books">All</option>
+          <% publisher.forEach(item => {%>
+            <option value="/books?pub=<%= item.pub_name %>"><%= item.pub_name %></option>
+          <%})%>
+        </select>
+      </th>
+      <th>
+      </th>
+    </tr>
+    <% results.forEach(item => {%>
+      <tr>
+        <td><%= item.book_name %></td>
+        <td><%= item.aut_name %></td>
+        <td><%= item.cat %></td>
+        <td><%= item.pub %></td>
+        <td><%= item.book_price %></td>
+      </tr>
+      <%})%>
+  </table>
+</body>
+</html>
