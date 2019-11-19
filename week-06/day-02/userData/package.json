@@ -1,0 +1,19 @@
+{
+  "name": "userData",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.7.3",
+    "express": "^4.17.1",
+    "fast-csv": "^3.4.0",
+    "mysql2": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
