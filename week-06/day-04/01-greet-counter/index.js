@@ -28,7 +28,9 @@ app.get("/greeting", (req, res) => {
   });
 });
 
-// start express app on port 3000
+//heroku url
+//https://safe-wave-16910.herokuapp.com/greeting?name=Adam
+// start express app on port 8080
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
