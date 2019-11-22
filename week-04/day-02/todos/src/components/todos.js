@@ -59,14 +59,14 @@ export default class Todos extends React.Component {
   render() {
     return (
       <>
-        <h1 className="heading">TODOS</h1>
+        <h1 className='heading'>TODOS</h1>
         <form onSubmit={this.handleSubmit}>
           <input
-            type="text"
+            type='text'
             value={this.state.value}
             onChange={this.handleChange}
           />
-          <Button onClick={this.handleSubmit} text="Add" />
+          <Button onClick={this.handleSubmit} text='Add' />
         </form>
         <section>
           <TaskList
@@ -75,9 +75,9 @@ export default class Todos extends React.Component {
             DeleteClick={index => this.handleDelete(index)}
           />
         </section>
-        <a className="todo-item" href="/themes">
+        {/* <a className="todo-item" href="/themes">
           Theme Switcher
-        </a>
+        </a> */}
       </>
     );
   }
