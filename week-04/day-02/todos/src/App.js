@@ -12,10 +12,10 @@ export default class App extends React.Component {
       <Router>
         <main>
           <Switch>
-            <Route exact path="/" component={Todos} />
-            <Route path="/themes" component={Themes} />
+            <Route exact path='/' component={Todos} />
+            <Route path='/themes' component={Themes} />
             <Route
-              path="/themed/:name"
+              path='/themed/:name'
               render={({ match }) => {
                 const themeName = match.params.name;
                 return <Todos themeName={themeName} />;
