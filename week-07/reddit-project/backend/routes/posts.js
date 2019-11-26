@@ -77,6 +77,7 @@ module.exports = {
                 throw error;
               } else {
                 conn.query(responseQuery, function(error, result) {
+                  res.status(200);
                   res.json(result[0]);
                 });
               }
@@ -91,6 +92,7 @@ module.exports = {
               throw error;
             } else {
               conn.query(responseQuery, function(error, result) {
+                res.status(200);
                 res.json(result[0]);
               });
             }
