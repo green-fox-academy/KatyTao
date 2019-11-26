@@ -12,7 +12,7 @@ export default function Post(props) {
     <section className='post-section'>
       <div className='vote-section'>
         <img src={Upvote} alt='upvote' />
-        <p>16</p>
+        <p>{props.post.score}</p>
         <img src={Downvote} alt='downvote' />
       </div>
       <div className='article-section'>

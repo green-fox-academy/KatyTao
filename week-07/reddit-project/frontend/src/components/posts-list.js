@@ -1,5 +1,7 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Post from "./post";
+
 const data = {
   posts: [
     {
@@ -8,9 +10,6 @@ const data = {
       url: "http://9gag.com",
       timestamp: 1494339525,
       score: 791
-      // (Optional) "owner": null,
-      // (Optional) "vote": 1,
-      // (Optional) "comments": 3
     },
     {
       id: 74,
@@ -18,17 +17,46 @@ const data = {
       url: "http://9gag.com",
       timestamp: 1494138425,
       score: 567
-      // (Optional) "owner": "kristof4",
-      // (Optional) "vote": -1,
-      // (Optional) "comments": 2
     }
   ]
 };
 
 export default function PostList() {
+  const initialPosts = {
+    posts: [
+      {
+        id: "",
+        title: "",
+        url: "",
+        timestamp: "",
+        score: ""
+      }
+    ]
+  };
+  const [posts, setPosts] = useState(initialPosts);
+  const URL = "http://localhost:8080/api/posts/";
+  const getPosts = () => {
+    fetch(URL, {
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json"
+      }
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        setPosts(response);
+      });
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
     <section className='post-list'>
-      {data.posts.map(item => {
+      {posts.posts.map(item => {
         return <Post post={item} />;
       })}
     </section>

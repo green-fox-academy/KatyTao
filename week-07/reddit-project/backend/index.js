@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 8080;
-const DEFAULT_URL = "/r/space";
+const DEFAULT_URL = "/api";
 const posts = require("./routes/posts");
 
 //set static file serving
