@@ -1,13 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-const requestHandler = require("./controller");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const DEFAULT_URL = "/r/space";
 const posts = require("./routes/posts");
 
 //set static file serving
-// app.use("/static", express.static("static"));
+app.use(express.static("public"));
 
 app.use(express.json());
 app.use(cors());
