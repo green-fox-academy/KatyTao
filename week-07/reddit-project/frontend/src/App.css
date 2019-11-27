@@ -75,6 +75,11 @@ main {
   width: 10%;
 }
 
+.vote-section img {
+  width: 20px;
+  margin-top: 5px;
+}
+
 .article-section {
   text-align: left;
 }

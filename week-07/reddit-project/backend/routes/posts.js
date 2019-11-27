@@ -4,7 +4,10 @@ const { format } = require("mysql2");
 module.exports = {
   getPosts: (req, res) => {
     if (req.header("accept") === "application/json") {
-      const queryString = "SELECT id, title, url, timestamp, score FROM posts";
+      //TODO: update userId here when get login feature
+      const voteQuery =
+        "SELECT B.id, B.postsId, B.userId, C.name, B.vote FROM user C, vote B WHERE C.id = B.userId AND C.id = 1";
+      const queryString = `SELECT A.id, A.title, A.url, A.timestamp, A.score, E.name AS owner, D.vote FROM posts A LEFT JOIN (${voteQuery}) AS D ON A.id = D.postsId INNER JOIN user E ON E.id= A.userId;`;
       conn.query(queryString, function(error, results) {
         if (error) throw error;
         const returnBody = {
@@ -18,6 +21,7 @@ module.exports = {
       res.send("Accept invalided");
     }
   },
+
   postPosts: (req, res) => {
     if (
       req.header("accept") === "application/json" &&
@@ -25,6 +29,7 @@ module.exports = {
     ) {
       const timestamp = Date.now();
       const insertQuery = `INSERT INTO posts (title, url, timestamp, userId) VALUES (?,?,?,?)`;
+      //TODO: update userId to session id
       conn.query(insertQuery, [req.body.title, req.body.url, timestamp, 1]);
       const selectQuery =
         "SELECT id, title, url, timestamp, score FROM posts WHERE id = LAST_INSERT_ID()";
@@ -37,6 +42,7 @@ module.exports = {
       res.send("header invalided");
     }
   },
+
   putPosts: (req, res) => {
     if (req.header("accept") === "application/json") {
       let vote;
@@ -65,7 +71,15 @@ module.exports = {
         userId,
         req.params.id
       ]);
-      const responseQuery = `SELECT id, title, url, timestamp, score FROM posts WHERE id = "${req.params.id}"`;
+      //TODO: update userId later as session id
+      const voteQuery =
+        "SELECT B.id, B.postsId, B.userId, C.name, B.vote FROM user C, vote B WHERE C.id = B.userId AND C.id=1";
+      const responseQuery = `SELECT A.id, A.title, A.url, A.timestamp, A.score, E.name AS owner, D.vote
+      FROM posts A 
+      LEFT JOIN (${voteQuery}) AS D
+      ON A.id = D.postsId
+      INNER JOIN user E
+      ON E.id= A.userId WHERE A.id = "${req.params.id}"`;
       conn.query(selectQuery, function(error, results) {
         if (error) throw error;
         if (results.length) {
